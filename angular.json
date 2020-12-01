@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "shopping-list-ngrx-store"
+  "defaultProject": "shopping-list-ngrx-store",
+  "cli": {
+    "analytics": false
+  }
 }
