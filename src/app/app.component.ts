@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 
 import { ShoppingItem } from './store/models/shopping-item.models';
 import { AppState } from './store/models/app-state.model';
-import { AddItemAction } from './store/actions/shopping.actions';
+import { AddItemAction, DeleteItemAction } from './store/actions/shopping.actions';
 
 @Component({
   selector: 'app-root',
@@ -26,5 +26,9 @@ export class AppComponent implements OnInit {
     this.newShoppingItem.id = uuid();
     this.store.dispatch(new AddItemAction(this.newShoppingItem));
     this.newShoppingItem = { id: '', name: '' };
+  }
+
+  deleteItem(id) {
+    this.store.dispatch(new DeleteItemAction(id));
   }
 }
